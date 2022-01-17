@@ -5,5 +5,25 @@
       "password": "admin",
       "id": 1
     }
+  ],
+  "jobs": [
+    {
+      "company_name": "Masai",
+      "title": "IA",
+      "salary": "7LPA",
+      "description": "fdvjjdd fddvjvajv vfjvjvfdj vjfvjdv vsjvj",
+      "location": "Bangaluru",
+      "job_type": "WFH",
+      "id": 1
+    },
+    {
+      "company_name": "TCS",
+      "title": "SDE",
+      "salary": "8LPA",
+      "description": "fdbbkd bdjvj jjavj  vvajsvj gg",
+      "location": "Patna",
+      "job_type": "Office",
+      "id": 2
+    }
   ]
 }

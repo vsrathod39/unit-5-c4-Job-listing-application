@@ -1,5 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   UserAuthLoading,
   UserAuthSuccess,
@@ -9,12 +10,12 @@ import {
 export default function Login() {
   const [user, setUser] = React.useState();
 
-  // const { isAuth } = useSelector((state) => ({
-  //   // loading: state.loading,
-  //   // todos: state.data,
-  //   // error: state.error,
-  //   isAuth: state.isAuth,
-  // }));
+  const { isAuth } = useSelector((state) => ({
+    // loading: state.loading,
+    // todos: state.data,
+    // error: state.error,
+    isAuth: state.isAuth,
+  }));
 
   const dispatch = useDispatch();
 
@@ -71,6 +72,7 @@ export default function Login() {
         <br />
         <input type="submit" />
       </form>
+      {isAuth ? <Navigate replace to="/admin" /> : null}
     </div>
   );
 }
