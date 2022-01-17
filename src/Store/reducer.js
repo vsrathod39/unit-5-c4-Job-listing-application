@@ -39,7 +39,7 @@ export const Reducer = (state = init, { type, payload }) => {
     case USER_AUTH_SUCCESS:
       return {
         ...state,
-        isAuth: payload,
+        isAuth: true,
         loading: false,
         error: false,
       };

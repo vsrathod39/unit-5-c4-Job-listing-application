@@ -5,7 +5,7 @@ import {
   USER_AUTH_ERROR,
   USER_AUTH_LOADING,
   USER_AUTH_SUCCESS,
-} from "./ActionTypes";
+} from "./actionTypes";
 
 export const AddJobLoading = () => {
   return {
@@ -33,10 +33,10 @@ export const UserAuthLoading = () => {
   };
 };
 
-export const UserAuthSuccess = (data) => {
+export const UserAuthSuccess = () => {
   return {
     type: USER_AUTH_SUCCESS,
-    payload: data,
+    // payload: data,
   };
 };
 
