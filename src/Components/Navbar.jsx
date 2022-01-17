@@ -8,16 +8,16 @@ export default function Navbar() {
       title: "Home",
       id: 1,
     },
-    {
-      to: "/login",
-      title: "Login",
-      id: 2,
-    },
-    {
-      to: "/dashboard",
-      title: "Dashboard",
-      id: 3,
-    },
+    // {
+    //   to: "/login",
+    //   title: "Login",
+    //   id: 2,
+    // },
+    // {
+    //   to: "/dashboard",
+    //   title: "Dashboard",
+    //   id: 3,
+    // },
     // {
     //   to: "/login/admin",
     //   title: "Login as admin",
@@ -32,6 +32,14 @@ export default function Navbar() {
           </Link>
         );
       })}
+      {!isAuth ? (
+        <Link to="/login">Login</Link>
+      ) : (
+        <>
+          <Link to="/dashboard">Dashboard</Link>
+          <button onClick={handleLogout}>Logout</button>
+        </>
+      )}
     </div>
   );
 }
