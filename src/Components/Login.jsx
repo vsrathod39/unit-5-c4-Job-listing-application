@@ -72,7 +72,7 @@ export default function Login() {
         <br />
         <input type="submit" />
       </form>
-      {isAuth ? <Navigate replace to="/admin" /> : null}
+      {isAuth ? <Navigate replace to="/user/dashboard" /> : null}
     </div>
   );
 }

@@ -5,6 +5,9 @@ import {
   USER_AUTH_ERROR,
   USER_AUTH_LOADING,
   USER_AUTH_SUCCESS,
+  GET_JOB_ERROR,
+  GET_JOB_LOADING,
+  GET_JOB_SUCCESS,
 } from "./actionTypes";
 
 export const AddJobLoading = () => {
@@ -43,6 +46,26 @@ export const UserAuthSuccess = () => {
 export const UserAuthError = (error) => {
   return {
     type: USER_AUTH_ERROR,
+    payload: error,
+  };
+};
+
+export const GetJobLoading = () => {
+  return {
+    type: GET_JOB_LOADING,
+  };
+};
+
+export const GetJobSuccess = (data) => {
+  return {
+    type: GET_JOB_SUCCESS,
+    payload: data,
+  };
+};
+
+export const GetJobError = (error) => {
+  return {
+    type: GET_JOB_ERROR,
     payload: error,
   };
 };

@@ -24,6 +24,15 @@
       "location": "Patna",
       "job_type": "Office",
       "id": 2
+    },
+    {
+      "company_name": "Deloite",
+      "title": "SDE2",
+      "salary": "14LPA",
+      "description": "fdfvvfjvjfd bfjdav dfjvjdvf bfdgg dffdfdjjfv hbdjhfjv",
+      "location": "Delhi",
+      "job_type": "Remote",
+      "id": 3
     }
   ]
 }
