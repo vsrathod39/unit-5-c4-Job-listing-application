@@ -61,7 +61,9 @@ export default function Navbar() {
           <Link to="/user/dashboard">Dashboard</Link>
           <button onClick={handleLogout}>Logout</button>
         </>
-      ) : null}
+      ) : (
+        <button onClick={handleLogout}>Logout</button>
+      )}
     </div>
   );
 }
