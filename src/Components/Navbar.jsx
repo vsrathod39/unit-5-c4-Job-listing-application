@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  USER_AUTH_ERROR,
-  USER_AUTH_LOADING,
-  USER_AUTH_SUCCESS,
-} from "../Store/actionTypes";
+  UserAuthLoading,
+  UserAuthSuccess,
+  UserAuthError,
+} from "../Store/actions";
 
 export default function Navbar() {
   const { isAuth } = useSelector((state) => ({
@@ -39,9 +39,9 @@ export default function Navbar() {
   ];
 
   const handleLogout = () => {
-    dispatch(USER_AUTH_LOADING());
-    dispatch(USER_AUTH_SUCCESS("false"));
-    dispatch(USER_AUTH_ERROR("isAuth Error"));
+    dispatch(UserAuthLoading());
+    dispatch(UserAuthSuccess("false"));
+    dispatch(UserAuthError("isAuth Error"));
   };
 
   return (
