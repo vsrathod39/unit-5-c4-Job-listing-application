@@ -1,3 +1,7 @@
 export const ADD_JOB_LOADING = "ADD_JOB_LOADING";
 export const ADD_JOB_SUCCESS = "ADD_JOB_SUCCESS";
 export const ADD_JOB_ERROR = "ADD_JOB_ERROR";
+
+export const USER_AUTH_LOADING = "USER_AUT_LOADING";
+export const USER_AUTH_SUCCESS = "USER_AUT_SUCCESS";
+export const USER_AUTH_ERROR = "USER_AUT_ERROR";

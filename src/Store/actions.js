@@ -1,4 +1,11 @@
-import { ADD_JOB_ERROR, ADD_JOB_LOADING, ADD_JOB_SUCCESS } from "./ActionTypes";
+import {
+  ADD_JOB_ERROR,
+  ADD_JOB_LOADING,
+  ADD_JOB_SUCCESS,
+  USER_AUTH_ERROR,
+  USER_AUTH_LOADING,
+  USER_AUTH_SUCCESS,
+} from "./ActionTypes";
 
 export const AddJobLoading = () => {
   return {
@@ -16,6 +23,26 @@ export const AddJobSuccess = (data) => {
 export const AddJobError = (error) => {
   return {
     type: ADD_JOB_ERROR,
+    payload: error,
+  };
+};
+
+export const UserAuthLoading = () => {
+  return {
+    type: USER_AUTH_LOADING,
+  };
+};
+
+export const UserAuthSuccess = (data) => {
+  return {
+    type: USER_AUTH_SUCCESS,
+    payload: data,
+  };
+};
+
+export const UserAuthError = (error) => {
+  return {
+    type: USER_AUTH_ERROR,
     payload: error,
   };
 };
