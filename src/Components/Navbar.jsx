@@ -2,17 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  UserAuthLoading,
-  UserAuthSuccess,
-  UserAuthError,
+  UserLogoutLoading,
+  UserLogoutSuccess,
+  UserLogoutError,
 } from "../Store/actions";
 
 export default function Navbar() {
-  const { isAuth } = useSelector((state) => ({
+  const { isAuth, user_type } = useSelector((state) => ({
     // loading: state.loading,
     // todos: state.data,
     // error: state.error,
     isAuth: state.isAuth,
+    user_type: state.user_type,
   }));
   const dispatch = useDispatch();
 
@@ -39,9 +40,9 @@ export default function Navbar() {
   ];
 
   const handleLogout = () => {
-    dispatch(UserAuthLoading());
-    dispatch(UserAuthSuccess("false"));
-    dispatch(UserAuthError("isAuth Error"));
+    dispatch(UserLogoutLoading());
+    dispatch(UserLogoutSuccess("false"));
+    dispatch(UserLogoutError("isAuth Error"));
   };
 
   return (
@@ -55,12 +56,12 @@ export default function Navbar() {
       })}
       {!isAuth ? (
         <Link to="/login">Login</Link>
-      ) : (
+      ) : user_type === "user" ? (
         <>
           <Link to="/user/dashboard">Dashboard</Link>
           <button onClick={handleLogout}>Logout</button>
         </>
-      )}
+      ) : null}
     </div>
   );
 }

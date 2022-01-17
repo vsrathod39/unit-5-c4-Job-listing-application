@@ -33,6 +33,15 @@
       "location": "Delhi",
       "job_type": "Remote",
       "id": 3
+    },
+    {
+      "company_name": "Congnizant",
+      "title": "Lead",
+      "salary": "18LPA",
+      "description": "dfkfbvkdbkdb",
+      "location": "Noida",
+      "job_type": "WFH",
+      "id": 4
     }
   ]
 }

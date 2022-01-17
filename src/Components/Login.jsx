@@ -10,11 +10,12 @@ import {
 export default function Login() {
   const [user, setUser] = React.useState();
 
-  const { isAuth } = useSelector((state) => ({
+  const { isAuth, user_type } = useSelector((state) => ({
     // loading: state.loading,
     // todos: state.data,
     // error: state.error,
     isAuth: state.isAuth,
+    user_type: state.user_type,
   }));
 
   const dispatch = useDispatch();
@@ -36,15 +37,18 @@ export default function Login() {
       })
       .then((data) => {
         data.forEach((el) => {
-          if (el.name === user.name && el.password) {
-            dispatch(UserAuthSuccess());
+          if (el.name === user.name && el.password === user.password) {
+            if (user?.user_type === "on") {
+              dispatch(UserAuthSuccess("admin"));
+            } else {
+              dispatch(UserAuthSuccess("user"));
+            }
             alert("login sccess");
             return;
           } else {
             alert("Invalid authetication");
           }
         });
-        dispatch(UserAuthSuccess());
       })
       .catch((error) => {
         console.log(error);
@@ -70,9 +74,18 @@ export default function Login() {
           placeholder="password"
         />{" "}
         <br />
+        <label>Are you admin</label>
+        <input onChange={handleChange} type="checkbox" name="user_type" />
+        <br />
         <input type="submit" />
       </form>
-      {isAuth ? <Navigate replace to="/user/dashboard" /> : null}
+      {isAuth ? (
+        user_type === "admin" ? (
+          <Navigate replace to="/admin" />
+        ) : (
+          <Navigate replace to="/user/dashboard" />
+        )
+      ) : null}
     </div>
   );
 }

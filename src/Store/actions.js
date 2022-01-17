@@ -8,6 +8,9 @@ import {
   GET_JOB_ERROR,
   GET_JOB_LOADING,
   GET_JOB_SUCCESS,
+  USER_LOGOUT_ERROR,
+  USER_LOGOUT_LOADING,
+  USER_LOGOUT_SUCCESS,
 } from "./actionTypes";
 
 export const AddJobLoading = () => {
@@ -36,10 +39,10 @@ export const UserAuthLoading = () => {
   };
 };
 
-export const UserAuthSuccess = () => {
+export const UserAuthSuccess = (data) => {
   return {
     type: USER_AUTH_SUCCESS,
-    // payload: data,
+    payload: data,
   };
 };
 
@@ -66,6 +69,25 @@ export const GetJobSuccess = (data) => {
 export const GetJobError = (error) => {
   return {
     type: GET_JOB_ERROR,
+    payload: error,
+  };
+};
+
+export const UserLogoutLoading = () => {
+  return {
+    type: USER_LOGOUT_LOADING,
+  };
+};
+
+export const UserLogoutSuccess = () => {
+  return {
+    type: USER_LOGOUT_SUCCESS,
+  };
+};
+
+export const UserLogoutError = (error) => {
+  return {
+    type: USER_LOGOUT_ERROR,
     payload: error,
   };
 };
